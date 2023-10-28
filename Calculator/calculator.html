@@ -12,32 +12,35 @@
         <p id="output">0</p>
       </div>
       <div class="buttons">
-        <button class="dark" onclick="appendToResult('(')">(</button>
-        <button class="dark" onclick="appendToResult(')')">)</button>
+        <button class="dark" onclick="appendToDisplay('(')">(</button>
+        <button class="dark" onclick="appendToDisplay(')')">)</button>
         <button class="dark" onclick="calculate()">ans</button>
         <button class="dark" onclick="clearLastEntered()">del</button>
         <button class="dark" onclick="clearResult()">clear</button>
-        <button onclick="appendToResult('7')">7</button>
-        <button onclick="appendToResult('8')">8</button>
-        <button onclick="appendToResult('9')">9</button>
-        <button class="dark" onclick="appendToResult('%')">%</button>
-        <button class="dark" onclick="appendToResult('√')">√</button>
-        <button onclick="appendToResult('4')">4</button>
-        <button onclick="appendToResult('5')">5</button>
-        <button onclick="appendToResult('6')">6</button>
-        <button class="dark" onclick="appendToResult('*')">*</button>
-        <button class="dark" onclick="appendToResult('/')">/</button>
-        <button onclick="appendToResult('1')">1</button>
-        <button onclick="appendToResult('2')">2</button>
-        <button onclick="appendToResult('3')">3</button>
-        <button class="dark" onclick="appendToResult('+')">+</button>
-        <button class="dark" onclick="appendToResult('-')">-</button>
-        <button class="dark" onclick="appendToResult('.')">.</button>
-        <button onclick="appendToResult('0')">0</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button class="dark" onclick="appendToDisplay('%')">%</button>
+        <button class="dark" onclick="appendSqrt()">√</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button class="dark" onclick="appendToDisplay('*')">*</button>
+        <button class="dark" onclick="appendToDisplay('/')">/</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button class="dark" onclick="appendToDisplay('+')">+</button>
+        <button class="dark" onclick="appendToDisplay('-')">-</button>
+        <button class="dark" onclick="appendToDisplay('.')">.</button>
+        <button onclick="appendToDisplay('0')">0</button>
         <button class="dark" onclick="toggleSign()">+/-</button>
         <button class="last-button" onclick="calculate()">ENTER</button>
       </div>
     </div>
+    <br />
+    <p style="text-align: center;"><strong>Note :</strong> Make sure that while using square root you will add ")" after entering the value.</p>
+    
     <script src="calculator.js"></script>
   </body>
 </html>

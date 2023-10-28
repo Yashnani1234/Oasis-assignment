@@ -1,37 +1,52 @@
-let inputResult = document.getElementById("input");
-let outputResult = document.getElementById("output");
-let lastEntered = "";
+// Get references to the input and output elements
+const inputElement = document.getElementById("input");
+const outputElement = document.getElementById("output");
 
-function appendToResult(value) {
-  lastEntered += value;
-  inputResult.innerText = lastEntered;
-}
+let currentExpression = "";
 
-function clearLastEntered() {
-  lastEntered = lastEntered.slice(0, -1);
-  inputResult.innerText = lastEntered;
-}
-
-function clearResult() {
-  lastEntered = "";
-  inputResult.innerText = "0";
-  outputResult.innerText = "0";
-}
-
-function toggleSign() {
-  if (lastEntered.startsWith("-")) {
-    lastEntered = lastEntered.slice(1);
-  } else {
-    lastEntered = "-" + lastEntered;
-  }
-  inputResult.innerText = lastEntered;
+function appendToDisplay(value) {
+    // If the last entered character is not a number, append the percentage value before the operator
+    const lastChar = currentExpression.slice(-1);
+    if (!isNaN(lastChar) && value === '%') {
+        currentExpression = `${currentExpression} * 0.01 *`;
+    } else {
+        currentExpression += value;
+    }
+    inputElement.textContent = currentExpression;
 }
 
 function calculate() {
-  try {
-    let result = eval(lastEntered);
-    outputResult.innerText = result;
-  } catch (error) {
-    outputResult.innerText = "Error";
-  }
+    try {
+        const result = eval(currentExpression);
+        outputElement.textContent = result;
+    } catch (error) {
+        outputElement.textContent = "Error";
+    }
 }
+
+function clearLastEntered() {
+    currentExpression = currentExpression.slice(0, -1);
+    inputElement.textContent = currentExpression;
+}
+
+function clearResult() {
+    currentExpression = "";
+    inputElement.textContent = "0";
+    outputElement.textContent = "0";
+}
+
+function appendSqrt() {
+    currentExpression += "Math.sqrt(";
+    inputElement.textContent = currentExpression;
+}
+
+function toggleSign() {
+    // Implement functionality to toggle the sign of the current number if applicable
+    // For example, if the current expression is "5", it can be changed to "-5" and vice versa.
+}
+
+// Add any additional functions you need for the calculator's functionality
+
+// Handle 'ENTER' button press
+const enterButton = document.querySelector(".last-button");
+enterButton.addEventListener("click", calculate);

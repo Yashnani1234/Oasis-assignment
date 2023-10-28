@@ -10,7 +10,7 @@ h1 {
 }
 
 .container {
-  width: 220px;
+  width: 280px;
   margin: 0 auto;
   padding: 10px 10px 20px 10px;
   background-color: rgb(255, 255, 255);
@@ -55,7 +55,7 @@ p {
 }
 
 button {
-  font-size: 12px;
+  font-size: 18px;
   background-color: #cce5ff;
   font-weight: 700;
   color: #163b5f;
